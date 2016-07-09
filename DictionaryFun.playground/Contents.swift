@@ -15,13 +15,18 @@
 // write your code here
 
 
+var statesAndCapitals = ["NewYork" : "Albany",
+                         "Ohio" : "Columbus",
+                         "Florida" : "Tallahassee",
+                         "Georgia" : "Atlanta",
+                         "Kentucky" : "Frankfort"]
 
 
 /*: question2
  ### 2. What is the type of the dictionary you created in Question 1?
  */
 
-
+//[String : String]
 
 
 /*: question3
@@ -30,14 +35,16 @@
 // write your code here
 
 
-
+var capital = statesAndCapitals["Florida"]
 
 /*: question4
  ### 4. Unwrap `capital` and print out the message "The capital of Florida is <Capital>" to the console.
  */
 // write your code here
 
-
+if let capital = capital {
+print("The capital of Florida is \(capital)")
+}
 
 
 /*: question5
@@ -46,6 +53,7 @@
 // write your code here
 
 
+var anotherCapital = statesAndCapitals["Pennsylvania"]
 
 
 /*: question6
@@ -55,6 +63,11 @@
 
 
 
+if let anotherCapital = anotherCapital {
+    print("\(anotherCapital)")
+}else{
+print("I don't know Pennsylvania's capital")
+}
 
 /*: question7
  ### 7. Pennsylvania's capital is Harrisburg. Add it to your state capitals dictionary.
@@ -62,7 +75,7 @@
 // write your code here
 
 
-
+statesAndCapitals["Pennsylvania"] = "Harrisburg"
 
 /*: question8
  ### 8. Retrieve Pennsylvania's capital from your dictionary. Unwrap it and print the message "Pennsylvania's capital is <Capital>" to the console.
@@ -70,6 +83,10 @@
 // write your code here
 
 
+var definition = statesAndCapitals["Pennsylvania"]
+if let definition = definition{
+print("Pennsylvania's capital is\(definition)")
+}
 
 
 /*: question9
@@ -77,17 +94,20 @@
  */
 // write your code here
 
-
-
+statesAndCapitals["Pennsylvania"] = nil
+print(statesAndCapitals)
 
 /*: question10
  ### 10. You have been given the constant `state` with a state name. Use that constant to retrieve the state's capital from the dictionary. Print "The capital of <State> is <Capital>" to the console.
  */
 let state = "New York"
-// write your code here
-
-
-
+ //write your code here
+let capital1 = statesAndCapitals[state]
+if let capital1 = capital1 {
+print("The capital of \(state) is \(capital1)")
+}else{
+print("something else")
+}
 
 /*: question11
  ### 11. Dictionaries don't have to contain just `String` keys and values. Create a dictionary that contains the name of a band, and the members of that band. Here are the bands and members that you can use:
@@ -101,13 +121,17 @@ let state = "New York"
  */
 // write your code here
 
+var thatsALotOfPeople = ["Nirvana" : ["Kurt Cobain", "Krist Novoselic", "Dave Grohl"],
+           "The Beatles" : ["John Lennon", "George Harrison", "Paul McCartney", "Ringo Starr"],
+           "The Breeders" : ["Kim Deal", "Kelley Deal", "Josephine Wiggs", "Jim Macpherson"],
+           "Pixies" : ["Frank Black", "Joey Santiago", "Kim Deal", "David Lovering"]]
 
 
 
 /*: question12
  ### 12. What is the type of the dictionary you created in Question 11?
  */
-
+//[String : Array<String>]
 
 
 
@@ -116,7 +140,10 @@ let state = "New York"
  */
 let bandName = "Pixies"
 // write your code here
-
+let members = thatsALotOfPeople[bandName]
+if let members = members {
+print(members)
+}
 
 
 
